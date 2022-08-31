@@ -11,7 +11,7 @@ $script = {
     $newDisksCount = $newDisks.Count
     $dataDisksCount = $dataDisks.Count
 
-    # verify both arrays have the same length
+    # verify if both arrays have the same length.
     if ($newDisksCount -eq $dataDisksCount) {
         for ($i = 0; $i -lt $newDisksCount; $i++) {
             if (($newDisks[$i].size)/1024/1024 -eq $dataDisks[$i].size) {

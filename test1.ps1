@@ -1,7 +1,9 @@
-param ($in_disks, $serverName)
+param ($in_disks, $in_serverName)
 
 $script = {
-    #$in_disks
+    $in_disks
+    $in_serverName
+
     $diskArray = $in_disks | ConvertFrom-Json
     $diskArray
     $dataDisks = $diskArray.where{($_.label -ne "C")}
@@ -24,4 +26,4 @@ $script = {
     }
 }
 
-Invoke-Command -ScriptBlock $script -ArgumentList $in_disks, $serverName
+Invoke-Command -ScriptBlock $script -ArgumentList $in_disks, $in_serverName
